@@ -34,19 +34,59 @@ public class HT9
         
         while( (linea=br.readLine())!=null)
         {
-            linea.replace("",";");
-            System.out.println(linea);
-            //linea.replace(",",";");
+            if(linea.indexOf("\t")!=-1)
+            {
+                linea=linea.replace("\t","-");
+            }
             
-            //ingles=linea.substring(0,linea.indexOf("\t"));
-            //espanol=linea.substring(linea.indexOf("\t")+1,linea.length());
-            //bt.insert(new Association(ingles,espanol));
+            linea=linea.replaceAll(",",";");
+            //System.out.println(linea);
+            
+            if(linea.indexOf(";")!=-1)
+            {
+                linea=linea.substring(0,linea.indexOf(";"));
+            }
+            
+            ingles=linea.substring(0,linea.indexOf("-")).toLowerCase();
+            espanol=linea.substring(linea.indexOf("-")+1,linea.length()).toLowerCase();
+            bt.insert(new Association(ingles,espanol));
             
                     
-            //System.out.println(ingles+espanol);
+            //System.out.println(ingles+"-"+espanol);
                     
         }
         
+        //File archivo2 = new File ("./texto.txt");//PARA ENTREGA FINAL
+        File archivo2 = new File ("C:\\Users\\jose\\Desktop\\DISEÑO\\TRABAJOS\\UVG\\3er Semestre\\Estructura de Datos\\HT9\\EstructurasHT9\\texto.txt");
+        FileReader fr2 = new FileReader (archivo2);
+        BufferedReader br2 = new BufferedReader(fr2);
+        
+        String ingreso="";
+        while( (linea=br2.readLine())!=null)
+        {
+            ingreso+=linea;
+        }
+        
+        
+        String[] separado=ingreso.split(" ");
+        
+        for (int i=0; i<separado.length;i++)
+        {
+            if (bt.search(separado[i].toLowerCase()))
+            {
+                separado[i]=bt.translate(separado[i].toLowerCase());
+            }
+            else
+            {
+                separado[i]="*"+separado[i]+"*";
+            }
+        }
+        
+         for (int i=0; i<separado.length;i++){
+            System.out.print(separado[i]+" ");
+        }
+                
+                
         
         
         

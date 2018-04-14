@@ -235,6 +235,35 @@ public class SplayTree<E>
          }
          return null;
      }
+     
+     
+     public String translate(String s){
+       SplayNode n=translateRecursive(root,s);
+       if (n==null){
+           return null;
+       }else{
+           return n.getValue();
+       }
+   }
+
+   
+   public SplayNode translateRecursive(SplayNode current, String s){
+       if (current == null) 
+        {
+            return null;
+        }
+       if (s.compareTo(current.getKey())>0) {
+            return translateRecursive(current.left, s);
+        } else if (s.compareTo(current.getKey())<0) {
+            return translateRecursive(current.right, s);
+        } else {
+            // value already exists
+            return current;
+        }       
+   }
+     
+     
+     
  
      /** Function for inorder traversal **/ 
      public void inorder()
