@@ -50,9 +50,7 @@ public class SplayTree<E>
              else
              {
                  z = z.right;
-             }
-             
-             
+             }   
          }
          z = new SplayNode();
          z.element = ele;
