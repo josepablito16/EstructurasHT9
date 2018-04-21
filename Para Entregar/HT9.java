@@ -1,9 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author Jose Cifuentes
+ * @author Luis Delgado
+ * @version 20.4.18
+ * Clase Principal
  */
-package ht9;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,10 +13,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
- *
- * @author jose
- */
+
 public class HT9 
 {
 
@@ -28,8 +26,8 @@ public class HT9
         SplayTree bt = new SplayTree();
         RedBlackTree bt2=new RedBlackTree();
         String linea, ingles,espanol;
-        //File archivo = new File ("./freedict-eng-spa.txt");//PARA LA ENTREGA FINAL
-        File archivo = new File ("C:\\Users\\jose\\Desktop\\DISEÑO\\TRABAJOS\\UVG\\3er Semestre\\Estructura de Datos\\HT9\\EstructurasHT9\\freedict-eng-spa.txt");
+        File archivo = new File ("./freedict-eng-spa.txt");//PARA LA ENTREGA FINAL
+        //File archivo = new File ("C:\\Users\\jose\\Desktop\\DISEÑO\\TRABAJOS\\UVG\\3er Semestre\\Estructura de Datos\\HT9\\EstructurasHT9\\freedict-eng-spa.txt");
         FileReader fr = new FileReader (archivo);
         BufferedReader br = new BufferedReader(fr);
         teclado = new Scanner(System.in);
@@ -82,8 +80,8 @@ public class HT9
                     
         }
         
-        //File archivo2 = new File ("./texto.txt");//PARA ENTREGA FINAL
-        File archivo2 = new File ("C:\\Users\\jose\\Desktop\\DISEÑO\\TRABAJOS\\UVG\\3er Semestre\\Estructura de Datos\\HT9\\EstructurasHT9\\texto.txt");
+        File archivo2 = new File ("./texto.txt");//PARA ENTREGA FINAL
+        //File archivo2 = new File ("C:\\Users\\jose\\Desktop\\DISEÑO\\TRABAJOS\\UVG\\3er Semestre\\Estructura de Datos\\HT9\\EstructurasHT9\\texto.txt");
         FileReader fr2 = new FileReader (archivo2);
         BufferedReader br2 = new BufferedReader(fr2);
         

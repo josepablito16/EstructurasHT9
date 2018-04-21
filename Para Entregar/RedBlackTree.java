@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ht9;
-import java.util.NoSuchElementException;
-import java.util.Queue;
 /**
  *
- * @author ledod
+ * @author Jose Cifuentes
+ * @author Luis Delgado
+ * @version 20.4.18
+ * Clase RBT
  */
+import java.util.NoSuchElementException;
+import java.util.Queue;
+
 
 public class RedBlackTree<Key extends Comparable<Key>, Value extends Comparable<Value>>{
     private static final boolean RED   = true;
